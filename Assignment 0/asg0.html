@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Asg0 by Dylan Nguyen</title>
+  </head>
+
+  <p>Name: Dylan Nguyen 
+    <br><br>
+    Email: dytanguy@ucsc.edu
+  </p>
+
+  <body onload="main()">
+  <canvas id="example" width="400" height="400">
+  Please use a browser that supports "canvas"
+  </canvas>
+  <script src="asg0.js"></script>
+  <script src="lib/cuon-matrix-cse160.js"></script>
+
+  <br><br>
+
+  <label for="v1x">v1 x:</label>
+    <input type="number" id="v1x" value="5" step="1">
+    <label for="v1y">v1 y:</label>
+    <input type="number" id="v1y" value="5" step="1">
+
+    <br><br>
+
+  <label for="v2x">v2 x:</label>
+    <input type="number" id="v2x" value="0" step="1">
+    <label for="v2y">v2 y:</label>
+    <input type="number" id="v2y" value="0" step="1">
+
+  <br><br>
+
+  <input type="button" value="Draw" onclick="handleDrawEvent()">
+
+  <br><br>
+
+  <label for="operation">Operation:</label>
+  <select id="operation">
+      <option value="add">Add</option>
+      <option value="sub">Subtract</option>
+      <option value="mul">Multiply</option>
+      <option value="div">Divide</option>
+      <option value="mag">Magnitude</option>
+      <option value="norm">Normalize</option>
+      <option value="angle">Angle Between</option>
+      <option value="area">Area</option>
+  </select>
+  <label for="scalar">Scalar:</label>
+  <input type="number" id="scalar" value="1" step="1">
+
+  <br><br>
+  
+  <input type="button" value="Draw" onclick="handleDrawOperationEvent()">
+  </body>
+</html>

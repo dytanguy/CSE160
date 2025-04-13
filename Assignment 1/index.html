@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dylan Nguyen Assignment 1</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        canvas { border: 1px solid black; background-color: white; }
+        .controls { margin: 10px 0; padding: 10px; border: 1px solid #ddd; }
+        .control-group { margin: 5px 0; }
+        label { display: inline-block; width: 120px; }
+    </style>
+</head>
+<body>
+    <h1>Dylan Nguyen Assignment 1</h1>
+    
+    <div class="controls">
+        <div class="control-group">
+            <label for="shapeType">Shape:</label>
+            <select id="shapeType">
+                <option value="point">Point</option>
+                <option value="triangle">Triangle</option>
+                <option value="circle">Circle</option>
+            </select>
+        </div>
+        
+        <div class="control-group">
+            <label for="colorRed">Red:</label>
+            <input type="range" id="colorRed" min="0" max="100" value="100">
+            <span id="redValue">1.0</span>
+        </div>
+        
+        <div class="control-group">
+            <label for="colorGreen">Green:</label>
+            <input type="range" id="colorGreen" min="0" max="100" value="0">
+            <span id="greenValue">0.0</span>
+        </div>
+        
+        <div class="control-group">
+            <label for="colorBlue">Blue:</label>
+            <input type="range" id="colorBlue" min="0" max="100" value="0">
+            <span id="blueValue">0.0</span>
+        </div>
+        
+        <div class="control-group">
+            <label for="sizeSlider">Size:</label>
+            <input type="range" id="sizeSlider" min="1" max="50" value="10">
+            <span id="sizeValue">10</span>
+        </div>
+        
+        <div class="control-group" id="segmentsControl" style="display:none;">
+            <label for="segmentsSlider">Segments:</label>
+            <input type="range" id="segmentsSlider" min="3" max="100" value="30">
+            <span id="segmentsValue">30</span>
+        </div>
+        
+        <button id="clearButton">Clear Canvas</button>
+
+        <button id="winButton">Bounce House!</button>
+
+        <button id="swordSceneButton">Sword in Stone</button>
+    </div>
+    
+    <canvas id="glCanvas" width="800" height="600"></canvas>
+
+    <img src="reference.jpg" alt="Reference Image" width="500">
+
+    <br><br>
+
+    <paragraph>For the "Awesomeness" category I added a button just labeled as Bounce House that will play an animation of randomly spawned 
+        shapes of random colors that fall from the sky and bounce for a little bit before stopping.</paragraph>
+    
+    <script src="Point.js"></script>
+    <script src="Triangle.js"></script>
+    <script src="Circle.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

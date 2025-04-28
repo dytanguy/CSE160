@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>3D Pig - WebGL</title>
+  <style>
+    body {
+      background: #f5f5f5;
+      font-family: sans-serif;
+    }
+    canvas {
+      background: #ddd;
+      width: 600px;
+      height: 600px;
+      display: block;
+      margin-bottom: 1em;
+    }
+    .controls {
+      margin-bottom: 1em;
+    }
+    label {
+      display: block;
+      margin: 4px 0 2px;
+    }
+  </style>
+</head>
+<body>
+  <div id="fpsCounter">FPS: --</div>
+
+  <canvas id="webgl" width="600" height="600"></canvas>
+
+  <div class="controls">
+    <label>Global Rotation</label>
+    <input type="range" id="globalRotation" min="-180" max="180" value="0">
+
+    <label>Front Left Leg Angle</label>
+    <input type="range" id="FrontLeftAngle" min="-20" max="10" value="-5">
+
+    <label>Front Right Leg Angle</label>
+    <input type="range" id="FrontRightAngle" min="-20" max="10" value="-5">
+
+    <label>Back Left Leg Angle</label>
+    <input type="range" id="BackLeftAngle" min="-20" max="10" value="-5">
+
+    <label>Back Right Leg Angle</label>
+    <input type="range" id="BackRightAngle" min="-20" max="10" value="-5">
+
+    <label>Tail Base Angle</label>
+    <input type="range" id="TailBaseAngle" min="-30" max="-20" value="-25">
+
+    <label>Tail Middle Angle</label>
+    <input type="range" id="TailMiddleAngle" min="-75" max="-65" value="-70">
+
+    <label>Tail Tip Angle</label>
+    <input type="range" id="TailTipAngle" min="-20" max="10" value="-5">
+
+    <label>Main Body Angle</label>
+    <input type ="range" id="AdjustableBodyAngle" min="-15" max="15" value="0">
+
+    <br><br>
+    <button id="MovingToggle">Toggle Moving</button>
+    <br><br>
+    <button id="animateBtn">Toggle Animation</button>
+  </div>
+
+  <script id="vertex-shader" type="x-shader/x-vertex">
+    attribute vec4 a_Position;
+    uniform mat4 u_ModelMatrix;
+    uniform mat4 uGlobalRotation;
+    void main() {
+      gl_Position = uGlobalRotation * u_ModelMatrix * a_Position;
+    }
+  </script>
+
+  <script id="fragment-shader" type="x-shader/x-fragment">
+    precision mediump float;
+    uniform vec4 u_Color;
+    void main() {
+      gl_FragColor = u_Color;
+    }
+  </script>
+
+  <script src="main.js"></script>
+</body>
+</html>

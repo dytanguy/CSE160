@@ -1,0 +1,15 @@
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(2, 200px);
+    justify-items: stretch;
+}
+
+#buttons>button{
+    font-size: 5vw;
+    touch-action: manipulation;
+}
+
+canvas {
+    touch-action: none;
+}

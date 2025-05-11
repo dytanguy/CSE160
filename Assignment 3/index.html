@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment 3 Dylan Nguyen</title>
+    <link rel="stylesheet" href="styles.css"></style>
+  </head>
+
+  <body onload="main()">
+    Average FPS: <span id="fps">(calculating...)</span>
+    <br>
+    <canvas id="webgl" width="800" height="800">
+    </canvas>
+    <br>
+    <select name="shading-level" id="shading">
+      <option value="2">High Shading</option>
+      <option value="1">Low Shading</option>
+      <option value="0">No shading</option>
+    </select>
+    <br>
+    Along with the general terrain which is created by a sin wave each controlling either x or y direction. For the center cobblestone looking area there are some builds I drafted in actual
+    Minecraft. The really tall one is my recreation of the Empire State Building from one glance at an image.
+    <br>
+    For the textures I just grabbed them from a Minecraft plastic texture pack here https://www.planetminecraft.com/texture-pack/the-plastic-texture-pack/
+    <br>
+    I included a maze as the "game." Make sure not to cheat by looking above! c:
+
+    <script src="lib/cuon-matrix-cse160.js"></script>
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="Camera.js"></script>
+    <script src="Light.js"></script>
+    <script src="Shapes.js"></script>
+    <script src="Chunks.js"></script>
+    <script src="World.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

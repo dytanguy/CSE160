@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Assignment 5 Dylan Nguyen</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    canvas {
+      display: block;
+      width: 80%;
+      height: 80%;
+    }
+
+    .split {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 80%;
+      height: 80%;
+      display: flex;
+      pointer-events: none;
+    }
+
+    .split > div {
+      width: 80%;
+      height: 80%;
+      pointer-events: auto;
+    }
+  </style>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.177.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.177.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <canvas id="c"></canvas>
+
+  <div class="split">
+    <div id="cam1" tabindex="1"></div>
+    <div id="cam2" tabindex="2"></div>
+  </div>
+
+  So a little background knowledge is needed to explain what's going on here. First the little unicorn in the middle is Little Ica from the game Honkai Star Rail. 
+  I got the model from a discord server, called the "Anime Game Modding Group" that has resources for modding the game. I imported the assets of the model here to blender then I converted it to an obj and mtl using a few
+  plugins that are also available in the server. The reason why theres a bunch of stuff orbiting him is that there is a joke in the Honkai Star Rail community that this unicorn is really
+  fat as it's mentioned in the game this guy ate 45 apples in one sitting. So the joke is that in my project he ate so much that he gained his own orbit/gravity.
+
+  <br><br>
+
+  The three light sources I have is a directional light which you can control in the top right, ambient light which you can also control, and a point light which is indicated by the yellow sphere that orbits Ica as well.
+  The point light isn't controllable mostly because I couldn't be bothered to implement it. If you look closely the cubes that orbit Ica the unicorn also have textures of a black hole character from Honkai Star Rail.
+  There are two cameras as you probably can tell, one is more of a main scenic camera, the other is meant more for visualizing the entire scene as it also has visual cues for the directional light and the main camera.
+  You can control it by using your mouse. There is a skybox which you probably noticed from the enourmous lag spike as it loaded in when you first opened the page. There are 25 primitive objects from the icospheres, to the cubes, to the pyramids.
+  There is also the sphere from the visual cue of the point light. Then there are also the two rings I made that are made from a torus. I meant for those to look like the rings of Saturn.
+
+  <br><br>
+
+  Lastly for the wow points, I added a button called "Summon Burger" which is also a joke in the Honkai Star Rail community. The joke is jsut that Ica is so big that he definitely enjoys eating Big Macs. I couldn't find
+  any free Big Mac models for some reason so I found this low poly burger model here <br> https://sketchfab.com/3d-models/burger-low-poly-bc88f1776b2c4893b487c78fa312b0fe and downloaded the blend file then exported it to an obj and mtl.
+  For the life of me I can't fix the textures but you can tell its a burger. When you press the burger button it'll summon a burger model in a random location, then the burger will slowly gravitate towards Ica. When the burger
+  intersects with Ica he will eat it and grow larger and more powerful. 
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
+
